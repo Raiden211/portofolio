@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        /* Small visual polish for scroll animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(45px);
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+
+        .reveal-delay-4 {
+            transition-delay: 0.4s;
+        }
+
+        .reveal-delay-5 {
+            transition-delay: 0.5s;
+        }
+
+        .reveal-delay-6 {
+            transition-delay: 0.6s;
+        }
+
+        .reveal-delay-7 {
+            transition-delay: 0.7s;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-slate-950 text-white">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-slate-950/90 backdrop-blur-md border-b border-slate-800/50">
+        <nav class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+
+            <!-- Logo -->
+            <div>
+                <a href="#home" class="text-2xl font-bold">
+                    Portofolio<span class="text-blue-500">.</span>
+                </a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <ul class="hidden md:flex items-center gap-8">
+                <li>
+                    <a href="#home" class="text-slate-300 hover:text-white transition">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#about" class="text-slate-300 hover:text-white transition">
+                        About
+                    </a>
+                </li>
+                <li>
+                    <a href="#skills" class="text-slate-300 hover:text-white transition">
+                        Skills
+                    </a>
+                </li>
+                <li>
+                    <a href="#experience" class="text-slate-300 hover:text-white transition">
+                        Experience
+                    </a>
+                </li>
+                <li>
+                    <a href="#education" class="text-slate-300 hover:text-white transition">
+                        Education
+                    </a>
+                </li>
+                <li>
+                    <a href="#projects" class="text-slate-300 hover:text-white transition">
+                        Projects
+                    </a>
+                </li>
+                <li>
+                    <a href="#contact" class="text-slate-300 hover:text-white transition">
+                        Contact
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Hamburger Button -->
+            <button
+                id="menu-button"
+                class="md:hidden text-3xl text-slate-300 hover:text-white transition"
+                aria-label="Toggle navigation"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+        </nav>
+
+        <!-- Full Screen Mobile Menu -->
+        <div
+            id="mobile-menu"
+            class="hidden absolute top-full left-0 w-full h-[calc(100vh-73px)] bg-slate-950"
+        >
+            <ul class="h-full flex flex-col items-center justify-center gap-8">
+                <li>
+                    <a
+                        href="#home"
+                        class="mobile-link text-3xl font-semibold text-slate-300 hover:text-white transition"
+                    >
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="#about"
+                        class="mobile-link text-3xl font-semibold text-slate-300 hover:text-white transition"
+                    >
+                        About
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="#skills"
+                        class="mobile-link text-3xl font-semibold text-slate-300 hover:text-white transition"
+                    >
+                        Skills
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="#experience"
+                        class="mobile-link text-3xl font-semibold text-slate-300 hover:text-white transition"
+                    >
+                        Experience
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="#education"
+                        class="mobile-link text-3xl font-semibold text-slate-300 hover:text-white transition"
+                    >
+                        Education
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="#projects"
+                        class="mobile-link text-3xl font-semibold text-slate-300 hover:text-white transition"
+                    >
+                        Projects
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="#contact"
+                        class="mobile-link text-3xl font-semibold text-slate-300 hover:text-white transition"
+                    >
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main>
+
+        <!-- Home -->
+        <section id="home" class="min-h-screen flex items-center px-6 pt-20 overflow-hidden">
+
+            <div class="max-w-6xl mx-auto w-full flex flex-col-reverse md:flex-row items-center justify-between gap-12">
+
+                <!-- Text -->
+                <div class="max-w-2xl text-center md:text-left reveal revealed">
+                    <p class="text-blue-500 font-semibold text-lg mb-3">
+                        Hello, I'm
+                    </p>
+                    <h1 class="text-5xl md:text-6xl font-bold tracking-tight mb-5">
+                        Dunstan Claudio Iwannyputra
+                    </h1>
+                    <h2 class="text-2xl md:text-3xl text-slate-300 font-semibold mb-6">
+                        Backend Developer | FullStack Developer | Web Developer
+                    </h2>
+                    <p class="text-slate-400 text-lg leading-relaxed mb-8 max-w-xl">
+                        I build modern, responsive, and user-friendly
+                        web applications with a focus on clean design
+                        and great user experience.
+                    </p>
+
+                    <!-- Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a
+                            href="#projects"
+                            class="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold transition"
+                        >
+                            View My Projects
+                        </a>
+                        <a
+                            href="#contact"
+                            class="px-6 py-3 border border-slate-700 hover:border-blue-500 hover:text-blue-500 rounded-lg font-semibold transition"
+                        >
+                            Contact Me
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Profile Picture -->
+                <div id="hero-photo" class="shrink-0 reveal revealed" data-parallax="0.08">
+                    <div class="relative">
+                        <div
+                            id="hero-glow"
+                            data-parallax="0.04"
+                            class="absolute inset-0 bg-blue-600 rounded-full blur-3xl opacity-20 will-change-transform">
+                        </div>
+                        <img
+                            src="img/img1.jpg"
+                            alt="Dunstan Claudio"
+                            data-parallax="0.08"
+                            class="relative w-64 h-64 md:w-80 md:h-80 object-cover rounded-full border-4 border-slate-800 shadow-2xl will-change-transform"
+                        >
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-20 px-6 bg-slate-900 mt-6">
+            <div class="max-w-6xl mx-auto">
+
+                <h2 class="text-3xl font-bold mb-12 text-center reveal">
+                    About Me
+                </h2>
+
+                <div class="max-w-3xl mx-auto space-y-6">
+                    <p class="text-slate-400 text-lg leading-relaxed reveal reveal-delay-1">
+                        I'm a fresh graduate with a strong interest in backend
+                        and full-stack web development. I enjoy building web
+                        applications that are functional, efficient, and
+                        easy to use.
+                    </p>
+
+                    <p class="text-slate-400 text-lg leading-relaxed reveal reveal-delay-2">
+                        During my studies and internship experience, I have
+                        worked with various programming languages, frameworks,
+                        and databases to develop real-world applications.
+                        I enjoy solving technical problems, learning new
+                        technologies, trying new frameworks, soft skills, and continuously improving my development
+                        skills.
+                    </p>
+
+                    <p class="text-slate-400 text-lg leading-relaxed reveal reveal-delay-3">
+                        I'm currently looking for an opportunity where I can
+                        contribute my skills, gain professional experience,
+                        and grow as a software developer.
+                    </p>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section id="skills" class="py-20 px-6">
+            <div class="max-w-6xl mx-auto">
+
+                <h2 class="text-3xl font-bold mb-4 text-center reveal">
+                    My Skills
+                </h2>
+
+                <p class="text-slate-400 text-center max-w-2xl mx-auto mb-12 reveal reveal-delay-1">
+                    Technologies and tools I use to build modern web
+                    and mobile applications.
+                </p>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+                    <!-- React -->
+                    <div class="group bg-slate-800/70 border border-slate-700
+                                p-6 rounded-xl text-center
+                                hover:border-blue-500/50 hover:-translate-y-1
+                                transition-all duration-300 reveal">
+
+                        <div class="h-16 flex items-center justify-center mb-5">
+                            <img
+                                src="img/React.png"
+                                alt="React.js"
+                                class="w-14 h-14 object-contain
+                                    group-hover:scale-110 transition-transform duration-300"
+                            >
+                        </div>
+
+                        <h3 class="font-semibold text-lg">
+                            React.js
+                        </h3>
+
+                        <p class="text-sm text-slate-400 mt-1">
+                            Frontend
+                        </p>
+                    </div>
+
+
+                    <!-- Node.js -->
+                    <div class="group bg-slate-800/70 border border-slate-700
+                                p-6 rounded-xl text-center
+                                hover:border-blue-500/50 hover:-translate-y-1
+                                transition-all duration-300 reveal reveal-delay-1">
+
+                        <div class="h-16 flex items-center justify-center mb-5">
+                            <img
+                                src="img/Node.js.png"
+                                alt="Node.js"
+                                class="w-14 h-14 object-contain
+                                    group-hover:scale-110 transition-transform duration-300"
+                            >
+                        </div>
+
+                        <h3 class="font-semibold text-lg">
+                            Node.js
+                        </h3>
+
+                        <p class="text-sm text-slate-400 mt-1">
+                            Backend
+                        </p>
+                    </div>
+
+
+                    <!-- TypeScript -->
+                    <div class="group bg-slate-800/70 border border-slate-700
+                                p-6 rounded-xl text-center
+                                hover:border-blue-500/50 hover:-translate-y-1
+                                transition-all duration-300 reveal reveal-delay-2">
+
+                        <div class="h-16 flex items-center justify-center mb-5">
+                            <img
+                                src="img/TypeScript.png"
+                                alt="TypeScript"
+                                class="w-14 h-14 object-contain
+                                    group-hover:scale-110 transition-transform duration-300"
+                            >
+                        </div>
+
+                        <h3 class="font-semibold text-lg">
+                            TypeScript
+                        </h3>
+
+                        <p class="text-sm text-slate-400 mt-1">
+                            Programming
+                        </p>
+                    </div>
+
+
+                    <!-- Laravel -->
+                    <div class="group bg-slate-800/70 border border-slate-700
+                                p-6 rounded-xl text-center
+                                hover:border-blue-500/50 hover:-translate-y-1
+                                transition-all duration-300 reveal reveal-delay-3">
+
+                        <div class="h-16 flex items-center justify-center mb-5">
+                            <img
+                                src="img/Laravel.png"
+                                alt="Laravel"
+                                class="w-14 h-14 object-contain
+                                    group-hover:scale-110 transition-transform duration-300"
+                            >
+                        </div>
+
+                        <h3 class="font-semibold text-lg">
+                            Laravel
+                        </h3>
+
+                        <p class="text-sm text-slate-400 mt-1">
+                            Backend
+                        </p>
+                    </div>
+
+
+                    <!-- MySQL -->
+                    <div class="group bg-slate-800/70 border border-slate-700
+                                p-6 rounded-xl text-center
+                                hover:border-blue-500/50 hover:-translate-y-1
+                                transition-all duration-300 reveal">
+
+                        <div class="h-16 flex items-center justify-center mb-5">
+                            <img
+                                src="img/MySQL.png"
+                                alt="MySQL"
+                                class="w-14 h-14 object-contain
+                                    group-hover:scale-110 transition-transform duration-300"
+                            >
+                        </div>
+
+                        <h3 class="font-semibold text-lg">
+                            MySQL
+                        </h3>
+
+                        <p class="text-sm text-slate-400 mt-1">
+                            Database
+                        </p>
+                    </div>
+
+
+                    <!-- Flutter -->
+                    <div class="group bg-slate-800/70 border border-slate-700
+                                p-6 rounded-xl text-center
+                                hover:border-blue-500/50 hover:-translate-y-1
+                                transition-all duration-300 reveal reveal-delay-1">
+
+                        <div class="h-16 flex items-center justify-center mb-5">
+                            <img
+                                src="img/Flutter.png"
+                                alt="Flutter"
+                                class="w-14 h-14 object-contain
+                                    group-hover:scale-110 transition-transform duration-300"
+                            >
+                        </div>
+
+                        <h3 class="font-semibold text-lg">
+                            Flutter
+                        </h3>
+
+                        <p class="text-sm text-slate-400 mt-1">
+                            Mobile
+                        </p>
+                    </div>
+
+                    <div class="group bg-slate-800/70 border border-slate-700
+                                p-6 rounded-xl text-center
+                                hover:border-blue-500/50 hover:-translate-y-1
+                                transition-all duration-300 reveal reveal-delay-2">
+                        <div class="h-16 flex items-center justify-center mb-5">
+                            <img
+                                src="img/Firebase.png"
+                                alt="Firebase"
+                                class="w-14 h-14 object-contain
+                                    group-hover:scale-110 transition-transform duration-300"
+                            >
+                        </div>
+                        <h3 class="font-semibold text-lg">
+                            Firebase
+                        </h3>
+                        <p class="text-sm text-slate-400 mt-1">
+                            Backend / BaaS
+                        </p>
+                    </div>
+
+                    <div class="group bg-slate-800/70 border border-slate-700
+                                p-6 rounded-xl text-center
+                                hover:border-blue-500/50 hover:-translate-y-1
+                                transition-all duration-300 reveal reveal-delay-3">
+                        <div class="h-16 flex items-center justify-center mb-5">
+                            <img
+                                src="img/PostgresSQL.png"
+                                alt="PostgreSQL"
+                                class="w-14 h-14 object-contain
+                                    group-hover:scale-110 transition-transform duration-300"
+                            >
+                        </div>
+                        <h3 class="font-semibold text-lg">
+                            PostgreSQL
+                        </h3>
+                        <p class="text-sm text-slate-400 mt-1">
+                            Database
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="py-16 px-6 bg-slate-900">
+            <div class="max-w-4xl mx-auto">
+
+                <h2 class="text-3xl font-bold mb-10 text-center reveal">
+                    My Experience
+                </h2>
+
+                <div class="space-y-4">
+                    <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 hover:border-blue-500/50 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300 reveal">
+                        <p class="text-sm text-blue-500 font-semibold mb-2">
+                            January 2021 — March 2021
+                        </p>
+                        <h3 class="text-xl font-bold text-white">
+                            PT Mitra Wista Sahabat
+                        </h3>
+                        <p class="text-sm text-slate-400 mt-1">
+                            Intern
+                        </p>
+                        <p class="text-slate-400 mt-4 leading-relaxed">
+                            During my internship at PT Mitra Wista Sahabat, 
+                            I gained experience in a professional work environment
+                            and contributed to the company's activities and projects.
+                            And mostly the project here was mapping the location from house to wifi terminal using Google Earth Pro and write the evaluation report from the mapping result. I also learned how to work in a team, communicate effectively, and manage my time efficiently.
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 hover:border-blue-500/50 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300 reveal reveal-delay-1">
+                        <p class="text-sm text-blue-500 font-semibold mb-2">
+                            July 2021 — September 2021
+                        </p>
+                        <h3 class="text-xl font-bold text-white">
+                            Airport Authority Office Region VII Balikpapan
+                        </h3>
+                        <p class="text-sm text-slate-400 mt-1">
+                            Intern
+                        </p>
+                        <p class="text-slate-400 mt-4 leading-relaxed">
+                            During my internship at Airport Authority Office Region VII Balikpapan, I assisted in the help of managing document and printing document for the office. I also learned how to communicate effectively, and manage my time efficiently.
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 hover:border-blue-500/50 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300 reveal reveal-delay-2">
+                        <p class="text-sm text-blue-500 font-semibold mb-2">
+                            September 2025 — December 2025
+                        </p>
+                        <h3 class="text-xl font-bold text-white">
+                            Perumda Tirta Manuntung Balikpapan (PTMB)
+                        </h3>
+                        <p class="text-sm text-slate-400 mt-1">
+                            Intern
+                        </p>
+                        <p class="text-slate-400 mt-4 leading-relaxed">
+                            During my internship at PTMB, I assisted in the
+                            maintenance and development of web and mobile
+                            applications while collaborating with the development team.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="py-20 px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl font-bold mb-12 text-center reveal">My Education</h2>
+
+                <div class="space-y-6">
+                    <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 hover:border-blue-500/50 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300 reveal">
+                        <p class="text-sm text-blue-500 font-semibold mb-2">
+                            2019 — 2022
+                        </p>
+                        <h3 class="text-xl font-bold text-white">
+                            Vocational School of SMKN 1 Balikpapan
+                        </h3>
+                        <p class="text-sm text-slate-400 mt-1">
+                            Software Engineering
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 hover:border-blue-500/50 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300 reveal reveal-delay-1">
+                        <p class="text-sm text-blue-500 font-semibold mb-2">
+                            2022 — 2026
+                        </p>
+                        <h3 class="text-xl font-bold text-white">
+                            Institut Sains dan Teknologi Terpadu Surabaya (ISTTS)
+                        </h3>
+                        <p class="text-sm text-slate-400 mt-1">
+                            Bachelor of Informatics
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-16 px-6 bg-slate-900">
+            <div class="max-w-6xl mx-auto">
+
+                <h2 class="text-3xl font-bold mb-3 text-center reveal">
+                    My Projects
+                </h2>
+
+                <p class="text-slate-400 text-center max-w-2xl mx-auto mb-10 reveal reveal-delay-1">
+                    A selection of projects I have built during my studies,
+                    internship, and personal development.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+                    <!-- Project 1 -->
+                    <article class="bg-slate-800 border border-slate-700 rounded-xl overflow-hidden hover:border-blue-500/50 hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300 h-full flex flex-col reveal">
+
+                        <div class="aspect-video overflow-hidden bg-slate-700 shrink-0">
+                            <img src="img/e-learning.png" alt="E-Learning Application" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        </div>
+
+                        <div class="p-5 flex flex-col flex-1">
+
+                            <h3 class="text-xl font-bold text-white mb-3 min-h-[56px]">
+                                Saint Michael Catholic Junior High School E-Learning Application
+                            </h3>
+
+                            <!-- Tech Stack -->
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="text-xs bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full">
+                                    Flutter
+                                </span>
+
+                                <span class="text-xs bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full">
+                                    Firebase
+                                </span>
+
+                                <span class="text-xs bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full">
+                                    Google API
+                                </span>
+                            </div>
+
+                            <!-- Description -->
+                            <p class="text-slate-400 text-sm leading-relaxed min-h-[120px]">
+                                My Bachelor's final project, this project is an e-learning
+                                multiplatform application designed to facilitate online
+                                learning for students and teachers at Saint Michael Catholic
+                                Junior High School, providing features such as course
+                                management, assignment submission, and real-time communication.
+                                It also includes examination features that allow teachers to
+                                conduct online exams with anti-cheating measures.
+                            </p>
+
+                            <!-- Links -->
+                            <div class="flex gap-5 mt-auto pt-5">
+                                
+                            </div>
+
+                        </div>
+                    </article>
+
+
+                    <!-- Project 2 -->
+                    <article class="bg-slate-800 border border-slate-700 rounded-xl overflow-hidden hover:border-blue-500/50 hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300 h-full flex flex-col reveal reveal-delay-1">
+                        <div class="aspect-video overflow-hidden bg-slate-700 shrink-0">
+                            <img
+                                src="img/website-pdam.png"
+                                alt="PTMB User Website Application"
+                                class="w-full h-full object-cover
+                                    hover:scale-105 transition-transform duration-500"
+                            >
+                        </div>
+
+                        <!-- Project Content -->
+                        <div class="p-5 flex flex-col flex-1">
+
+                            <h3 class="text-xl font-bold text-white mb-3 min-h-[56px]">
+                                PTMB User Website Application
+                            </h3>
+
+                            <!-- Tech Stack -->
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="text-xs bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full">
+                                    Laravel
+                                </span>
+
+                                <span class="text-xs bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full">
+                                    Supabase
+                                </span>
+                            </div>
+
+                            <!-- Description -->
+                            <p class="text-slate-400 text-sm leading-relaxed min-h-[120px]">
+                                A website application for PTMB that provides
+                                information and services to its users. This program consists
+                                of several features such as current news, water meter readings
+                                and current bills, and a contact form for users to reach out
+                                to the company. The application is built using Laravel and
+                                Supabase, ensuring a secure and efficient experience for users.
+                            </p>
+
+                            <!-- Links -->
+                            <div class="flex gap-5 mt-auto pt-5">
+                                
+                            </div>
+
+                        </div>
+                    </article>
+
+                    <article class="bg-slate-800 border border-slate-700 rounded-xl overflow-hidden hover:border-blue-500/50 hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300 h-full flex flex-col reveal reveal-delay-2">
+
+                        <!-- Project Image -->
+                        <div class="aspect-video overflow-hidden bg-slate-700 shrink-0">
+                            <img
+                                src="img/website-admin.png"
+                                alt="PTMB Admin Website Application"
+                                class="w-full h-full object-cover
+                                    hover:scale-105 transition-transform duration-500"
+                            >
+                        </div>
+
+                        <!-- Project Content -->
+                        <div class="p-5 flex flex-col flex-1">
+
+                            <h3 class="text-xl font-bold text-white mb-3 min-h-[56px]">
+                                PTMB Admin Website Application
+                            </h3>
+
+                            <!-- Tech Stack -->
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="text-xs bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full">
+                                    Laravel
+                                </span>
+
+                                <span class="text-xs bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full">
+                                    Supabase
+                                </span>
+                            </div>
+
+                            <!-- Description -->
+                            <p class="text-slate-400 text-sm leading-relaxed min-h-[120px]">
+                                A website application for PTMB that provides administrative functionalities for managing the company's operations. This program consists of several features such as user management, water meter readings management, billing management, and reporting. The application is built using Laravel and Supabase, ensuring a secure and efficient experience for administrators.
+                            </p>
+
+                            <!-- Links -->
+                            <div class="flex gap-5 mt-auto pt-5">
+                                
+                            </div>
+
+                        </div>
+                    </article>
+
+                    <article class="bg-slate-800 border border-slate-700 rounded-xl overflow-hidden hover:border-blue-500/50 hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300 h-full flex flex-col reveal reveal-delay-3">
+
+                        <!-- Project Image -->
+                        <div class="h-64 sm:h-72 overflow-hidden bg-slate-900 shrink-0
+                                    flex items-center justify-center">
+
+                            <div class="h-[90%] rounded-2xl overflow-hidden border-4 border-slate-700
+                                        shadow-2xl transition-transform duration-500
+                                        group-hover:scale-105">
+
+                                <img
+                                    src="img/mobile-pdam.png"
+                                    alt="PTMB User Mobile Application"
+                                    class="h-full w-auto object-contain"
+                                >
+
+                            </div>
+                        </div>
+
+                        <!-- Project Content -->
+                        <div class="p-5 flex flex-col flex-1">
+
+                            <h3 class="text-xl font-bold text-white mb-3 min-h-[56px]">
+                                PTMB User Mobile Application
+                            </h3>
+
+                            <!-- Tech Stack -->
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="text-xs bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full">
+                                    Flutter
+                                </span>
+
+                                <span class="text-xs bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full">
+                                    Supabase
+                                </span>
+                            </div>
+
+                            <!-- Description -->
+                            <p class="text-slate-400 text-sm leading-relaxed min-h-[120px]">
+                                A mobile application for PTMB that provides
+                                information and services to its users. This program consists
+                                of several features such as current news, water meter readings
+                                and current bills.Apart from that, there are water meter registration, ticketing system, reporting, and a contact form for users to reach out
+                                to the company. The application is built using Flutter and
+                                Supabase, ensuring a secure and efficient experience for users.
+                            </p>
+
+                            <!-- Links -->
+                            <div class="flex gap-5 mt-auto pt-5">
+                                <!-- <a href="#" class="text-sm font-semibold text-white hover:text-blue-400 transition">GitHub →</a> -->
+                            </div>
+
+                        </div>
+                    </article>
+
+                    <article class="bg-slate-800 border border-slate-700 rounded-xl overflow-hidden hover:border-blue-500/50 hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300 h-full flex flex-col reveal reveal-delay-4">
+
+                        <!-- Project Image -->
+                        <div class="aspect-video overflow-hidden bg-slate-700 shrink-0">
+                            <img
+                                src="img/response-api-example.png"
+                                alt="API project restaurant"
+                                class="w-full h-full object-cover
+                                    hover:scale-105 transition-transform duration-500"
+                            >
+                        </div>
+
+                        <!-- Project Content -->
+                        <div class="p-5 flex flex-col flex-1">
+
+                            <h3 class="text-xl font-bold text-white mb-3 min-h-[56px]">
+                                API Project Restaurant
+                            </h3>
+
+                            <!-- Tech Stack -->
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="text-xs bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full">
+                                    Node.js
+                                </span>
+
+                                <span class="text-xs bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full">
+                                    Express.js
+                                </span>
+
+                                <span class="text-xs bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full">
+                                    MySQL
+                                </span>
+                            </div>
+
+                            <!-- Description -->
+                            <p class="text-slate-400 text-sm leading-relaxed min-h-[120px]">
+                                A API School project for restaurant. This project is a RESTful API built using Node.js, Express.js, and MySQL. It provides endpoints for managing restaurant data, including menu items, orders, and customer information. The API is designed to be scalable and efficient, allowing for easy integration with frontend applications or other services. Also this API integrating the Third Party API for extracting the data from the Third Party API and storing it in the database for further processing and analysis.
+                            </p>
+
+                            <!-- Links -->
+                            <div class="flex gap-5 mt-auto pt-5">
+                                <a href="https://github.com/Raiden211/Proyek-WS-A" class="text-sm font-semibold text-white hover:text-blue-400 transition">GitHub →</a>
+                            </div>
+
+                        </div>
+                    </article>
+
+                    <article class="bg-slate-800 border border-slate-700 rounded-xl overflow-hidden hover:border-blue-500/50 hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300 h-full flex flex-col reveal reveal-delay-5">
+
+                        <!-- Project Image -->
+                        <div class="aspect-video overflow-hidden bg-slate-700 shrink-0">
+                            <img
+                                src="img/react-project.png"
+                                alt="Toserba Project"
+                                class="w-full h-full object-cover
+                                    hover:scale-105 transition-transform duration-500"
+                            >
+                        </div>
+
+                        <!-- Project Content -->
+                        <div class="p-5 flex flex-col flex-1">
+
+                            <h3 class="text-xl font-bold text-white mb-3 min-h-[56px]">
+                                Pandan Sari toserba website project
+                            </h3>
+
+                            <!-- Tech Stack -->
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="text-xs bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full">
+                                    React.js
+                                </span>
+
+                                <span class="text-xs bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full">
+                                    Node.js
+                                </span>
+
+                                <span class="text-xs bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full">
+                                    Express.js
+                                </span>
+
+                                <span class="text-xs bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full">
+                                    MongoDB
+                                </span>
+
+                                <span class="text-xs bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full">
+                                    Midtrans API
+                                </span>
+                            </div>
+
+                            <!-- Description -->
+                            <p class="text-slate-400 text-sm leading-relaxed min-h-[120px]">
+                                A Toserba Project website project built using React.js for the frontend, Node.js and Express.js for the backend, and MongoDB for the database. The project also integrates with the Midtrans API for payment processing. The website allows users to browse products, add items to their cart, and complete purchases securely through the integrated payment gateway.
+                            </p>
+
+                            <!-- Links -->
+                            <div class="flex gap-5 mt-auto pt-5">
+                                <a href="https://github.com/Raiden211/Proyek-WS-A" class="text-sm font-semibold text-white hover:text-blue-400 transition">GitHub →</a>
+                            </div>
+
+                        </div>
+                    </article>
+
+                    <article class="bg-slate-800 border border-slate-700 rounded-xl overflow-hidden
+                        hover:border-blue-500/50 hover:-translate-y-2 hover:shadow-xl
+                        hover:shadow-blue-500/5 transition-all duration-300 h-full flex flex-col
+                        reveal reveal-delay-4">
+
+                        <!-- Project Image -->
+                        <div class="aspect-video overflow-hidden bg-slate-700 shrink-0 relative">
+                            <div class="w-full h-full flex flex-col items-center justify-center">
+                                <span class="text-4xl text-slate-500 mb-3">+</span>
+                                <span class="text-sm font-semibold text-slate-400 tracking-wider">
+                                    COMING SOON
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Project Content -->
+                        <div class="p-5 flex flex-col flex-1">
+
+                            <h3 class="text-xl font-bold text-white mb-3 min-h-[56px]">
+                                New Project
+                            </h3>
+
+                            <!-- Status -->
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="text-xs bg-slate-700 text-slate-400 px-3 py-1 rounded-full">
+                                    In Development
+                                </span>
+                            </div>
+
+                            <!-- Description -->
+                            <p class="text-slate-400 text-sm leading-relaxed min-h-[120px]">
+                                A new project is currently in development.
+                                More details and project information will be available soon.
+                            </p>
+
+                            <!-- Links -->
+                            <div class="flex gap-5 mt-auto pt-5">
+                                <span class="text-sm font-semibold text-slate-500 cursor-default">
+                                    Coming Soon
+                                </span>
+                            </div>
+
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 px-6">
+            <div class="max-w-6xl mx-auto">
+                
+                <!-- Section Header -->
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                        Get In Touch
+                    </h2>
+                    <p class="text-slate-400 text-lg">
+                        I'm currently looking for new opportunities. Whether you have a question, a project idea, or just want to say hi, feel free to connect!
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-10">
+                    
+                    <div class="order-2 lg:order-1 lg:col-span-2 grid grid-cols-2 gap-3 lg:flex lg:flex-col lg:gap-4">
+                        <a href="mailto:dunstan1818@gmail.com" 
+                        class="flex items-center gap-4 p-5 bg-slate-800/80 border border-slate-700/80 rounded-xl hover:border-blue-500/60 hover:-translate-y-0.5 transition duration-300 reveal lg:flex-1">
+                            <div class="w-11 h-11 bg-blue-500/10 text-blue-400 rounded-lg
+                                        flex items-center justify-center shrink-0">
+                                <svg
+                                    class="w-5 h-5"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                                    />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">Email</p>
+                                <p class="text-slate-200 font-semibold hover:text-blue-400 break-all">dunstan1818@gmail.com</p>
+                            </div>
+                        </a>
+
+                        <!-- LinkedIn Card -->
+                        <a href="https://www.linkedin.com/in/dunstan-claudio-b55664225" target="_blank" rel="noopener noreferrer"
+                        class="flex items-center gap-4 p-5 bg-slate-800/80 border border-slate-700/80 rounded-xl hover:border-blue-500/60 hover:-translate-y-0.5 transition duration-300 reveal reveal-delay-1 lg:flex-1">
+                            <div class="w-11 h-11 bg-blue-500/10 text-blue-400 rounded-lg
+                                        flex items-center justify-center shrink-0">
+                                <svg
+                                    class="w-5 h-5"
+                                    fill="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"
+                                    />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">LinkedIn</p>
+                                <p class="text-slate-200 font-semibold hover:text-blue-400">Dunstan Claudio</p>
+                            </div>
+                        </a>
+
+                        <!-- GitHub Card -->
+                        <a href="https://github.com/Raiden211" target="_blank" rel="noopener noreferrer"
+                        class="flex items-center gap-4 p-5 bg-slate-800/80 border border-slate-700/80 rounded-xl hover:border-blue-500/60 hover:-translate-y-0.5 transition duration-300 reveal reveal-delay-2 lg:flex-1">
+                            <div class="w-11 h-11 bg-blue-500/10 text-blue-400 rounded-lg
+                                        flex items-center justify-center shrink-0">
+                                <svg
+                                    class="w-5 h-5"
+                                    fill="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        fill-rule="evenodd"
+                                        clip-rule="evenodd"
+                                        d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                    />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">GitHub</p>
+                                <p class="text-slate-200 font-semibold hover:text-blue-400 break-all">github.com/Raiden211</p>
+                            </div>
+                        </a>
+
+                        <!-- Location Card -->
+                        <div class="flex items-center gap-4 p-5 bg-slate-800/80 border border-slate-700/80 rounded-xl reveal reveal-delay-3 lg:flex-1">
+                            <div class="w-11 h-11 bg-blue-500/10 text-blue-400 rounded-lg
+                                        flex items-center justify-center shrink-0">
+                                <svg
+                                    class="w-5 h-5"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                                    />
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                                    />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">Location</p>
+                                <p class="text-slate-200 font-semibold">Balikpapan / Surabaya, Indonesia</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="lg:col-span-3 bg-slate-800/80 border border-slate-700/80 rounded-xl p-6 shadow-lg hover:border-slate-600 transition duration-300 reveal flex flex-col">
+                        <form action="https://formspree.io/f/xnpqvyvy" method="POST"class="space-y-4 flex flex-col flex-1" id="contact-form">
+                            <div>
+                                <label
+                                    for="name"
+                                    class="block text-sm font-medium text-slate-300 mb-1.5"
+                                >
+                                    Your Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    required
+                                    autocomplete="name"
+                                    placeholder="Your Name"
+                                    class="w-full px-4 py-2.5 bg-slate-900/90 border border-slate-700 rounded-lg text-white placeholder-slate-500 outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500/50 hover:border-slate-600 transition duration-200"
+                                >
+                            </div>
+
+                            <div>
+                                <label
+                                    for="email"
+                                    class="block text-sm font-medium text-slate-300 mb-1.5"
+                                >
+                                    Your Email
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    required
+                                    autocomplete="email"
+                                    placeholder="john@example.com"
+                                    class="w-full px-4 py-2.5 bg-slate-900/90 border border-slate-700 rounded-lg text-white placeholder-slate-500 outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500/50 hover:border-slate-600 transition duration-200"
+                                >
+                            </div>
+
+                            <div>
+                                <label
+                                    for="message"
+                                    class="block text-sm font-medium text-slate-300 mb-1.5"
+                                >
+                                    Message
+                                </label>
+
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    rows="3"
+                                    required
+                                    placeholder="Hi Dunstan..."
+                                    class="w-full px-4 py-2.5 bg-slate-900/90
+                                        border border-slate-700 rounded-lg
+                                        text-white placeholder-slate-500
+                                        outline-none resize-none
+                                        focus:border-blue-500
+                                        focus:ring-1 focus:ring-blue-500/50
+                                        hover:border-slate-600
+                                        transition duration-200"
+                                ></textarea>
+                            </div>
+
+                            <button
+                                type="submit"
+                                id="submit-btn"
+                                class="w-full py-3 px-6 bg-blue-600 hover:bg-blue-700 hover:-translate-y-0.5 active:translate-y-0 text-white font-semibold rounded-lg shadow-md hover:shadow-blue-500/20 transition-all duration-200"
+                            >
+                                Send Message
+                            </button>
+
+                            <p id="form-status" class="text-center font-medium text-sm hidden"></p>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-800 border-t border-slate-700 py-7 px-6">
+        <div class="max-w-6xl mx-auto">
+
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+
+                <div class="text-center md:text-left">
+                    <p class="text-white font-semibold">
+                        Dunstan Claudio Iwannyputra
+                    </p>
+
+                    <p class="text-sm text-slate-400 mt-1">
+                        Web Developer
+                    </p>
+                </div>
+
+                <a
+                    href="#home"
+                    class="text-sm text-slate-400 hover:text-blue-400
+                        transition duration-200"
+                >
+                    Back to Top ↑
+                </a>
+
+            </div>
+
+            <div class="border-t border-slate-700 mt-5 pt-5">
+                <p class="text-xs text-slate-500 text-center">
+                    &copy; 2026 Dunstan Claudio Iwannyputra. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
